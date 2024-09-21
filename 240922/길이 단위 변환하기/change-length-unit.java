@@ -1,9 +1,8 @@
 public class Main {
     public static void main(String[] args) {
-        double ft = 30.48;
-        double mi = 160934;
-        System.out.printf("9.2ft = %.1fcm", 9.2 * ft);
-        System.out.println();
-        System.out.printf("1.3mi = %.1fcm", 1.3 * mi);
+        double a = 9.2;
+        double b = 1.3;
+
+        System.out.printf("%.1fft = %.1fcm\n%.1fmi = %.1fcm", a, a * 30.48, b, b * 160934);
     }
 }
