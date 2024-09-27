@@ -1,9 +1,16 @@
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main (String args[]) {
         Scanner sc = new Scanner(System.in);
-        String str = sc.next();
-        System.out.println(str);
+
+        // 변수 선언
+        String s;
+
+        // 입력
+        s = sc.next();
+        
+        // 출력
+        System.out.println(s);
     }
 }
