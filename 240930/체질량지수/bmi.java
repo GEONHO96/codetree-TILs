@@ -4,15 +4,20 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        int h = sc.nextInt();
-        int w = sc.nextInt();
+        // 변수 선언
+        int h, w;
+        
+        // 입력
+        h = sc.nextInt();
+        w = sc.nextInt();
 
-        double b = w / (((double) h / 100) * ((double) h / 100));
-
-        System.out.println((int) b);
-
-        if (b >= 25) {
-            System.out.println("Obesity");
-        } 
+        // 키(cm)에서 키(m)로 단위 환산을 한 뒤 
+	    // 체질량지수 계산 식에 넣어야 함에 유의합니다.
+	    int bmi = w * 100 * 100 / (h * h);
+        
+        // 출력
+        System.out.println(bmi);
+        if(bmi >= 25)
+		    System.out.println("Obesity");
     }
 }
