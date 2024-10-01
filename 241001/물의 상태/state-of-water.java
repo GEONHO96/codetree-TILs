@@ -13,7 +13,7 @@ public class Main {
         // 출력
         if (temp < 0)
             System.out.println("ice");
-        else if (temp >= 0)
+        else if (temp >= 100)
             System.out.println("vapor");
         else
             System.out.println("water");
