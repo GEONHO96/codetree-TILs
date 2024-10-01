@@ -11,6 +11,6 @@ public class Main {
         a = sc.nextInt();
 
         // 출력
-        System.out.prinltn(a == 1 ? "t" : "f");
+        System.out.println(a == 1 ? "t" : "f");
     }
 }
