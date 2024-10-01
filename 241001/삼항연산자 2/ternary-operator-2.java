@@ -3,7 +3,14 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int a = sc.nextInt();
-        System.out.println(a == 1 ? "t" : "f");
+
+        // 변수 선언
+        int a;
+
+        // 입력
+        a = sc.nextInt();
+
+        // 출력
+        System.out.prinltn(a == 1 ? "t" : "f");
     }
 }
