@@ -3,8 +3,14 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int score = sc.nextInt();
-        String grade = score == 100 ? "pass" : "failure";
-        System.out.println(grade);
+
+        // 변수 선언
+        int score;
+
+        // 입력
+        score = sc.nextInt();
+
+        // 출력
+        System.out.println(score == 100 ? "pass" : "failure");
     }
 }
