@@ -8,7 +8,7 @@ public class Main {
         if (temperature < 0) {
             System.out.println("ice");
         }
-        else if (temperature > 100) {
+        else if (temperature >= 100) {
             System.out.println("vapor");
         }
         else {
