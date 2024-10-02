@@ -13,5 +13,8 @@ public class Main {
         else if (number == 3) {
             System.out.println("Paul");
         }
+        else {
+            System.out.println("Vacancy");
+        }
     }
 }
