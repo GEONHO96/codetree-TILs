@@ -3,10 +3,20 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int mathA = sc.nextInt();
-        int englishA = sc.nextInt();
-        int mathB = sc.nextInt();
-        int englishB = sc.nextInt();
-        System.out.println(mathA > mathB && englishA > englishB ? 1 : 0);
+
+        // 변수 선언
+        int aMath, aEng;
+        int bMath, bEng;
+
+        // 입력
+        aMath = sc.nextInt();
+        aEng = sc.nextInt();
+        bMath = sc.nextInt();
+        bEng = sc.nextInt();
+
+        if(aMath > bMath && aEng > bEng)
+            System.out.println("1");
+        else
+            System.out.println("0");
     }
 }
