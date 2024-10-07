@@ -3,11 +3,17 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        if ((n % 2 == 1 && n % 3 == 0) || (n % 2 == 0 && n % 5 == 0)) {
+
+        // 변수 선언
+        int n;
+
+        // 입력
+        n = sc.nextInt();
+
+        // 출력
+        if((n % 2 == 1 && n % 3 == 0) || (n % 2 == 0 && n % 5 == 0))
             System.out.println("true");
-        } else {
+        else
             System.out.println("false");
-        }
     }
 }
