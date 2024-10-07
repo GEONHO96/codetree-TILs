@@ -3,16 +3,21 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int ageA = sc.nextInt();
-        String A = sc.next();
-        char genderA = A.charAt(0); 
-        int ageB = sc.nextInt();
-        String B = sc.next();
-        char genderB = B.charAt(0);
-        if ((ageA >= 19 && genderA == 'M') || ((ageB >= 19 && genderB == 'M'))) {
-            System.out.println(1);
-        } else {
-            System.out.println(0);
-        }
+
+        // 변수 선언
+        int a_age, b_age;
+        char a_gen, b_gen;
+
+        // 입력
+        a_age = sc.nextInt();
+        a_gen = sc.next().charAt(0);
+        b_age = sc.nextInt();
+        b_gen = sc.next().charAt(0);
+
+        // 출력
+        if((a_age >= 19 && a_gen == 'M') || b_age >= 19 && b_gen == 'M')
+            System.out.println("1");
+        else
+            System.out.println("0");
     }
 }
