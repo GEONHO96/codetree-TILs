@@ -3,25 +3,28 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int genderNumber = sc.nextInt();
-        int age = sc.nextInt();
 
-        if (genderNumber == 0) {
-            if (age >= 19) {
+        // 변수 선언
+        int gender, age;
+
+        // 입력
+        gender = sc.nextInt();
+        age = sc.nextInt();
+
+        // gender가 0인지 1인지 판단하기
+        if(gender == 0) {
+            // gender가 0일 때, age가 19이상이면 MAN이, 19보다 작다면 BOY가 됩니다.
+            if(age >= 19)
                 System.out.println("MAN");
-            }
-            else {
+            else
                 System.out.println("BOY");
-            }
-        } 
-
-        if (genderNumber == 1) {
-            if (age >= 19) {
+        }
+        else {
+            // gender가 1일 때, age가 19이상이면, WOMAN이, 19보다 작다면 GIRL이 됩니다.
+            if(age >= 19)
                 System.out.println("WOMAN");
-            }
-            else {
+            else
                 System.out.println("GIRL");
-            }
         }
     }
 }
