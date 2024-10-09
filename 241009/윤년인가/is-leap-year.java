@@ -10,9 +10,14 @@ public class Main {
         // 입력
         y = sc.nextInt();
 
-        if((y % 4 == 0 && y % 100 != 0) || y % 400 == 0)
-            System.out.println("true");
+        // 출력
+        if(y % 400 == 0)
+            System.out.print("true");
+        else if(y % 100 == 0)
+            System.out.print("false");
+        else if(y % 4 == 0)
+            System.out.print("true");
         else
-            System.out.println("false");
+            System.out.print("false");
     }
 }
