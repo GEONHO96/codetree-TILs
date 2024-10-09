@@ -11,13 +11,21 @@ public class Main {
         y = sc.nextInt();
 
         // 출력
-        if(y % 400 == 0)
-            System.out.print("true");
-        else if(y % 100 == 0)
-            System.out.print("false");
-        else if(y % 4 == 0)
-            System.out.print("true");
-        else
-            System.out.print("false");
+        if(y % 4 == 0) {
+            if(y % 100 == 0) {
+                if(y % 400 == 0) {
+                    System.out.println("true");
+                }
+                else {
+                    System.out.println("false");
+                }
+            }
+            else {
+                System.out.println("true");
+            }
+        }
+        else {
+            System.out.println("false");
+        }
     }
 }
