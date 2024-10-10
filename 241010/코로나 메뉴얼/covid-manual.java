@@ -3,49 +3,34 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        char statusA = sc.next().charAt(0);
-        int temperatureA = sc.nextInt();
-        char statusB = sc.next().charAt(0);
-        int temperatureB = sc.nextInt();
-        char statusC = sc.next().charAt(0);
-        int temperatureC = sc.nextInt();
 
-        int A = 0;
-        int B = 0;
-        int C = 0;
-        int D = 0;
+        // 변수 선언
+        char c1, c2, c3;
+        int t1, t2, t3;
 
-        if (statusA == 'Y' && temperatureA >= 37) {
-            A++;
-        } else if (statusA == 'N' && temperatureA >= 37) {
-            B++;
-        } else if (statusA == 'Y' && temperatureA < 37) {
-            C++;
-        } else {
-            D++;
+        // 입력
+        c1 = sc.next().charAt(0);
+        t1 = sc.nextInt();
+        c2 = sc.next().charAt(0);
+        t2 = sc.nextInt();
+        c3 = sc.next().charAt(0);
+        t3 = sc.nextInt();
+
+        // 출력
+        // A가 2명 이상인지 판단하기
+        if(c1 == 'Y' && t1 >= 37) {
+            // 첫 번째 사람이 A라면, 남은 두 사람 중 한 사람이라도 A면 됩니다.
+            if((c2 == 'Y' && t2 >= 37) || (c3 == 'Y' && t3 >= 37))
+                System.out.println("E");
+            else
+                System.out.println("N");
         }
-
-        if (statusB == 'Y' && temperatureB >= 37) {
-            A++;
-        } else if (statusB == 'N' && temperatureB >= 37) {
-            B++;
-        } else if (statusA == 'Y' && temperatureB < 37) {
-            C++;
-        } else {
-            D++;
+        else {
+            // 첫 번째 사람이 A가 아니라면, 남은 두 사람 모두 A여야만 합니다.
+            if((c2 == 'Y' && t2 >= 37) && (c3 == 'Y' && t3 >= 37))
+                System.out.println("E");
+            else
+                System.out.println("N");
         }
-
-        if (statusC == 'Y' && temperatureC >= 37) {
-            A++;
-        } else if (statusC == 'N' && temperatureC >= 37) {
-            B++;
-        } else if (statusC == 'Y' && temperatureC < 37) {
-            C++;
-        } else {
-            D++;
-        }
-
-        if (A >= 2) System.out.println("E");
-        else System.out.println("N");
     }
 }
