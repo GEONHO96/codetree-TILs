@@ -1,9 +1,12 @@
 public class Main {
     public static void main(String[] args) {
-        int n = 10;
-        while (n <= 26) {
-            System.out.print(n + " ");
-            n += 2;
-        }        
+        // 변수 선언
+        int i = 10;
+
+        // 출력
+        while(i <= 26) {
+            System.out.print(i + " ");
+            i += 2;
+        }
     }
 }
