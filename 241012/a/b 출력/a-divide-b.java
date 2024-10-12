@@ -12,7 +12,7 @@ public class Main {
         b = sc.nextInt();
 
         // 정수 부분을 먼저 출력합니다.
-        System.out.println(a / b + ".");
+        System.out.print(a / b + ".");
 
         // a를 b로 나눈 나머지를 시작으로
         // 소수점 자리를 하나씩 계산합니다.
