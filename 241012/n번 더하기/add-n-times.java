@@ -9,7 +9,7 @@ public class Main {
 
         // 입력
         a = sc.nextInt();
-        b = sc.nextInt();
+        n = sc.nextInt();
 
         // 출력
         for(int i = 1; i <= n; i++) {
