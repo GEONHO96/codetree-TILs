@@ -3,23 +3,25 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        char ch;
 
-        while (n <= 100) {
-            if (n >= 90) {
-                ch = 'A';
-            } else if (n >= 80) {
-                ch = 'B';
-            } else if (n >= 70) {
-                ch = 'C';
-            } else if (n >= 60) {
-                ch = 'D';
-            } else {
-                ch = 'F';
-            }
-            System.out.print(ch + " ");
-            n++;
+        // 변수 선언
+        int n;
+
+        // 입력
+        n = sc.nextInt();
+
+        // 출력
+        for(int i = n; i <= 100; i++) {
+            if(i >= 90)
+                System.out.print("A ");
+            else if(i >= 80)
+                System.out.print("B ");
+            else if(i >= 70)
+                System.out.print("C ");
+            else if(i >= 60)
+                System.out.print("D ");
+            else
+                System.out.print("F ");
         }
     }
 }
