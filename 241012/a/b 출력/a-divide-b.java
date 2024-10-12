@@ -1,3 +1,5 @@
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Scanner;
 
 public class Main {
@@ -5,7 +7,8 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
         int b = sc.nextInt();
-        double c = (double) a / b;
-        System.out.printf("%.20f", c);
+        BigDecimal c = new BigDecimal((double) a / b);
+        BigDecimal d = c.setScale(21, RoundingMode.DOWN);
+        System.out.println(d);
     }
 }
