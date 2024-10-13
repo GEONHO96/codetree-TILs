@@ -10,7 +10,7 @@ public class Main {
                 System.out.print(temp + " ");
             } else if (temp % 3 == 0) {
                 System.out.print(0 + " ");
-            } else if (temp / 30 == 0) {
+            } else if (temp / 30 == 1 || temp / 30 == 2 || temp / 30 == 3) {
                 System.out.print(0 + " ");
             }
             temp++;
