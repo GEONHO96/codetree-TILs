@@ -6,14 +6,11 @@ public class Main {
         int n = sc.nextInt();
         int temp = 1;
         while (n >= temp) {
-            if (temp % 3 != 0) {
+            if (temp % 3 != 0 || temp / 30 == 1 || temp / 30 == 2 || temp / 30 == 3) {
                 System.out.print(temp + " ");
             } else {
                 System.out.print(0 + " ");
-            }
-            if (temp / 30 == 1 || temp / 30 == 2 || temp / 30 == 3) {
-                System.out.print(0 + " ");
-            }  
+            }           
             temp++;
         }
     }
