@@ -6,7 +6,7 @@ public class Main {
         int N = sc.nextInt();
         for(int i = 1; i <= N; i++) {
             int num = sc.nextInt();
-            if (num % 3 == 0) {
+            if (num % 3 == 0 && num % 2 == 1) {
                 System.out.println(num);
             }
         }
