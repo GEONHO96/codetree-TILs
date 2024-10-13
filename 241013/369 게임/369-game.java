@@ -8,7 +8,9 @@ public class Main {
         while (n >= temp) {
             if (temp % 3 != 0) {
                 System.out.print(temp + " ");
-            } else {
+            } else if (temp % 3 == 0) {
+                System.out.print(0 + " ");
+            } else if (temp / 30 == 0) {
                 System.out.print(0 + " ");
             }
             temp++;
