@@ -6,7 +6,8 @@ public class Main {
         int n = sc.nextInt();
         int sumVal = 0;
         for (int i = 1; i <= n; i++) {
-            if(i % 2 == 1 && i % 3 == 0) {
+            int num = sc.nextInt();
+            if(num % 2 == 1 && num % 3 == 0) {
                 sumVal++;
             }
         }
