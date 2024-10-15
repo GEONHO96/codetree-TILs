@@ -11,13 +11,13 @@ public class Main {
         n = sc.nextInt();
 
         // 1부터 증가시키며 나눈 값이 1이하가 된 순간, 나눗셈을 진행한 횟수를 출력합니다.
-        for(int i = 1; i <= 100; i++) {
-            if(n <= 1) {
-                System.out.print(cnt);
-                break;
-            }
+        int i = 1;
+        while(n > 1) {
             n /= i;
+            i++;
             cnt++;
         }
+
+        System.out.print(cnt);
     }
 }
