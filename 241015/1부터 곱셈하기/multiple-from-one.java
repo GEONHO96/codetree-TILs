@@ -5,11 +5,11 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int prod = 1;
-        for (int i = 1; i <= 10; i++) {
+        for (int i = 2; i <= 10; i++) {
             if (prod >= n) {
                 System.out.println(i - 1);
                 break;
-            }
+            }              
             prod *= i;
         }
     }
