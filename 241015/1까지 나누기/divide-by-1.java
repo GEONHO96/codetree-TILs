@@ -7,7 +7,7 @@ public class Main {
         int a = 1;
         while (true) {
             n = n / a;            
-            if (n == 0) {
+            if (n <= 1) {
                 break;
             }
             a++;           
