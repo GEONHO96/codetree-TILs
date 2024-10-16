@@ -6,21 +6,19 @@ public class Main {
         int a = sc.nextInt();
         int b = sc.nextInt();
         int c = sc.nextInt();
-        int i = a;
-
-        while (i <= b) {
-            i++;
+        boolean satisfied = false;
+        
+        for(int i = a; i <= b; i++) {
             if (i % c == 0) {
-                System.out.println("YES");
-                break;
+                satisfied = true;
             }
-            if (i % c != 0) {
-                continue;                
-            }
-            if (b <= c) {
-                System.out.println("NO");
-            }
-            System.out.println("NO");            
+        }
+
+        if (satisfied == true) {
+            System.out.println("YES");
+        }
+        else {
+            System.out.println("NO");
         }
     }
 }
