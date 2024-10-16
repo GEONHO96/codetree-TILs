@@ -11,6 +11,7 @@ public class Main {
                 satisfied = true;
             } else {
                 satisfied = false;
+                break;
             }            
         }
 
