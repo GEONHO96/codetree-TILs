@@ -8,17 +8,12 @@ public class Main {
 
         while (n < 1000) {
             if (n % 2 == 1) {
-                n = 2 * n + 2;
-                cnt++;
+                n = 2 * n + 2;                
+            } else {
+                n = 3 * n + 1;                
             }
-            if (n % 2 == 0) {
-                n = 3 * n + 1;
-                cnt++;
-            }
-            if (n >= 1000) {
-                break;
-            }
+            cnt++;
         }
-        System.out.println(cnt - 1);           
+        System.out.println(cnt);           
     }
 }
