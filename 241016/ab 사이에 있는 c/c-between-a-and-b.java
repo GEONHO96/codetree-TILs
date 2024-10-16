@@ -6,16 +6,18 @@ public class Main {
         int a = sc.nextInt();
         int b = sc.nextInt();
         int c = sc.nextInt();
+        int i = a;
 
-        for (int i = a; i <= b; i++) {
+        while (i < b) {
+            i++;
             if (i % c == 0) {
                 System.out.println("YES");
                 break;
             }
             if (i % c != 0) {
-                continue;
+                continue;                
             }
-            System.out.println("NO");
+            System.out.println("NO");            
         }
     }
 }
