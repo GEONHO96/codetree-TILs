@@ -17,6 +17,9 @@ public class Main {
             if (i % c != 0) {
                 continue;                
             }
+            if (b < c) {
+                System.out.println("NO");
+            }
             System.out.println("NO");            
         }
     }
