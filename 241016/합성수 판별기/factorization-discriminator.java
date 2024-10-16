@@ -10,7 +10,7 @@ public class Main {
                 break;
             }
             else {
-                if (i == n - 1 && i == 2) {
+                if (i == n && i == 2) {
                     System.out.println("N");
                 }
             }
