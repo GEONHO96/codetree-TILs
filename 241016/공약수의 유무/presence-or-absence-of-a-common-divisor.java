@@ -18,7 +18,7 @@ public class Main {
 
         //출력
         if(satisfied == true)
-            System.out.pritln("1");
+            System.out.println("1");
         else
             System.out.println("0");
     }
