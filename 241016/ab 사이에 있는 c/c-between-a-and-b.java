@@ -8,7 +8,7 @@ public class Main {
         int c = sc.nextInt();
         int i = a;
 
-        while (i < b) {
+        while (i <= b) {
             i++;
             if (i % c == 0) {
                 System.out.println("YES");
