@@ -10,7 +10,7 @@ public class Main {
         // 길이가 n인 직각삼각형을 출력합니다.
         for(int i = 0; i < n; i++) {
             for(int j = 0; j <= i; j++)
-                System.out.println("*");
+                System.out.print("*");
             System.out.println();
             System.out.println();
         }
