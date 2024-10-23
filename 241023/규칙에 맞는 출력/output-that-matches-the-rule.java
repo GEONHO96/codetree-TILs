@@ -10,7 +10,7 @@ public class Main {
         // 숫자로 이루어진 삼각형을 출력합니다.
         for(int i = 0; i < n; i++) {
             for(int j = 0; j <= i; j++) {
-                System.out.print((n - i - j) + " ");
+                System.out.print((n - i + j) + " ");
             }
             System.out.println();
         }
