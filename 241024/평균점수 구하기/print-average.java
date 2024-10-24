@@ -3,13 +3,24 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        double[] score = new double[9];
-        double sum = 0.0;
-        for (int i = 1; i <= 8; i++) {
-            score[i] = sc.nextDouble();
-            sum += score[i];
+
+        // 실수 배열 선언
+        double[] arr = new double[8];
+
+        // 변수 선언
+        double sum = 0;
+
+        // 8개의 실수를 배열에 입력받아 저장합니다.
+        for(int i = 0; i < 8; i++) {
+            arr[i] = sc.nextDouble();
         }
-        double avg = sum / 8;
-        System.out.printf("%.1f", avg);
+
+        // 배열에 저장된 원소들의 합을 구합니다.
+        for(int i = 0; i < 8; i++) {
+            sum += arr[i];
+        }
+
+        // sum을 출력합니다.
+        System.out.printf("%.1f", sum / 8);
     }
 }
