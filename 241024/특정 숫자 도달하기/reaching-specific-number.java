@@ -3,22 +3,29 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int[] arr = new int[11];
+
+        // 변수 선언
+        int[] arr = new int[10];
         int sum = 0;
         int cnt = 0;
 
-        for (int i = 1; i <= 10; i++) {
+        // 10개의 정수를 입력받습니다.
+        for(int i = 0 ; i < 10; i++) {
             arr[i] = sc.nextInt();
-            if (arr[i] < 250) {
-                sum += arr[i];
-                cnt++;
-            }
-            if (arr[i] > 250) {
-                break;
-            }
         }
-        double avg = (double) sum / cnt;
-        System.out.print(sum + " ");
-        System.out.printf("%.1f", avg);
+
+        // 10개의 정수 중 250 이상의 수가 나올 때 까지의 수의 합계와 개수를 구합니다.
+        for(int i = 0; i < 10; i++) {
+            if(arr[i] >= 250)
+                break;
+            sum += arr[i];
+            cnt++;
+        }
+
+        // 평균을 구합니다.
+        double avg = (double)sum / cnt;
+
+        // 출력
+        System.out.printf("%d %.1f", sum, avg);
     }
 }
