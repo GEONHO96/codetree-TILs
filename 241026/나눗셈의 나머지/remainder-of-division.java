@@ -7,7 +7,7 @@ public class Main {
         int a = sc.nextInt();
         int b = sc.nextInt();
         int sum = 0;
-        while (a > 0) {
+        while (a > 1) {
             count[a % b]++;
             a /= b;
         }
