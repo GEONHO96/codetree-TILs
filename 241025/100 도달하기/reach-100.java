@@ -9,10 +9,12 @@ public class Main {
         arr[1] = n;
         for (int i = 2; i < 100; i++) {
             arr[i] = arr[i - 1] + arr[i - 2];
-            System.out.print(arr[i] + " ");
             if (arr[i] > 100) {
                 break;
             }
+        }
+        for (int i = 0; i <= 100; i++) {
+            System.out.print(arr[i] + " ");            
         }
     }
 }
