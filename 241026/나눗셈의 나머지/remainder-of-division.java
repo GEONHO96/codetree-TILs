@@ -7,9 +7,9 @@ public class Main {
         int a = sc.nextInt();
         int b = sc.nextInt();
         int sum = 0;
-        while (a > 1) {
-            a /= b;
+        while (a > 0) {
             count[a % b]++;
+            a /= b;
         }
         for (int i = 0; i <= 9; i++) {
             sum += count[i] * count[i];
