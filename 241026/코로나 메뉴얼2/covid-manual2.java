@@ -3,27 +3,36 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int[] status = new int[4];
-        for (int i = 1; i <= 3; i++) {
-            char symptom = sc.next().charAt(0);
-            int temperature = sc.nextInt();
-            if (symptom == 'Y' && temperature >= 37) {
-                status[0]++;
-            } else if (symptom == 'N' && temperature >= 37) {
-                status[1]++;
-            } else if (symptom == 'Y') {
-                status[2]++;
-            } else {
-                status[3]++;
-            }
+        
+        // 카운팅 배열의 1에는 A인 사람의 수가, 2에는 B가, 3에는 C가, 4에는 D가 들어감
+        int[] countArr = new int[5];
+        // type num = 분류 번호
+        int typeNum = 0;
+        char s;
+        int t;
+        
+        // s와 t를 입력받은 후 카운팅 배열을 통해 각각의 빈도 저장
+        for(int i = 0; i < 3; i++) {
+            s = sc.next().charAt(0);
+            t = sc.nextInt();
+            
+            if(t >= 37 && s == 'Y')
+                typeNum = 1;
+            else if(t >= 37)
+                typeNum = 2;
+            else if(s == 'Y')
+                typeNum = 3;
+            else 
+                typeNum = 4;
+            countArr[typeNum]++;
         }
-
-        for (int i = 0; i < 4; i++) {
-            System.out.print(status[i] + " ");
+        
+        // A부터 D까지 나온 횟수를 출력
+        for(int i = 1; i <= 4; i++) {
+            System.out.print(countArr[i] + " ");
         }
-
-        if (status[0] == 2) {
-            System.out.println("E");
-        }
+        
+        if(countArr[1] >= 2)
+            System.out.print("E");
     }
 }
