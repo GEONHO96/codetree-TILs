@@ -29,7 +29,7 @@ public class Main {
                 int s = sc.nextInt();
                 int e = sc.nextInt();
                 for (int j = s; j <= e; j++) {
-                    System.out.print(arr[j] + " ");
+                    System.out.println(arr[j] + " ");
                 }
             }
         }
