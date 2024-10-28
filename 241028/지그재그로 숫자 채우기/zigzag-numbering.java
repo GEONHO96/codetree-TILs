@@ -3,24 +3,37 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
+        // n, m을 입력받습니다.
         int n = sc.nextInt();
         int m = sc.nextInt();
-        int[][] arr = new int[n][m];
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-                if (j == 0) {
-                    arr[i][j] = i;
+
+        // 2차원 배열을 구현합니다.
+        int[][] arr = new int[100][100];
+
+        // Step 1:
+        int count = 0;
+        for(int col = 0; col < m; col++) {
+            if (col % 2 == 0){
+                // Case 1:
+                for(int row = 0; row < n; row++){
+                    arr[row][col] = count;
+                    count++;
                 }
-                if (j % 2 == 0 && j != 0) {
-                    arr[i][j] = arr[i][j - 2] + 2 * n;
+            }
+            else {
+                // Case 2:
+                for(int row = n - 1; row >= 0; row--){
+                    arr[row][col] = count;
+                    count++;
                 }
-                if (j == 1) {
-                    arr[i][j] = 2 * n - i - j;
-                }
-                if (j % 2 == 1 && j != 1) {
-                    arr[i][j] = arr[i][j - 2] + 2 * n;
-                }
-                System.out.print(arr[i][j] + " ");
+            }
+        }
+
+        // 출력:
+        for(int row = 0; row < n; row++) {
+            for(int col = 0; col < m; col++) {
+                System.out.print(arr[row][col] + " ");
             }
             System.out.println();
         }
