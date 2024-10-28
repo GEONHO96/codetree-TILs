@@ -12,7 +12,6 @@ public class Main {
                 arr1[i][j] = sc.nextInt();
             }
         }
-        System.out.println();
 
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -25,6 +24,7 @@ public class Main {
                 mul[i][j] = arr1[i][j] * arr2[i][j];
                 System.out.print(mul[i][j] + " ");
             }
+            System.out.println();
         }
     }
 }
