@@ -10,7 +10,7 @@ public class Main {
         int[][] arr3 = new int[n][m];
 
         for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
+            for (int j = 0; j < m; j++) {
                 arr1[i][j] = sc.nextInt();
             }
         }
