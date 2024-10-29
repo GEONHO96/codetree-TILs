@@ -17,6 +17,7 @@ public class Main {
                 sum += str[i].length();
             }
         }
-        System.out.printf("%d %.2f", cnt, (double) sum / cnt);
+        double avg = (double) sum / cnt;
+        System.out.printf("%d %.2f", cnt, avg);
     }
 }
