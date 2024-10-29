@@ -11,7 +11,7 @@ public class Main {
                 System.out.print(ch);
             }
         } else {
-            for (int i = 0; i < n; i++) {
+            for (int i = 0; i < str.length(); i++) {
                 char ch1 = str.charAt(i);
                 System.out.print(ch1);
             }
