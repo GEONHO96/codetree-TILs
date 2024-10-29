@@ -13,8 +13,8 @@ public class Main {
         str2 = sc.next();
 
         // 문자열의 길이를 구합니다.
-        int len1 = str.length();
-        int len2 = str.length();
+        int len1 = str1.length();
+        int len2 = str2.length();
 
         // 두 문자열의 길이의 합을 출력합니다.
         System.out.println(len1 + len2);
