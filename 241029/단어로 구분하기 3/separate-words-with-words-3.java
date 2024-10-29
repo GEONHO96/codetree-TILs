@@ -7,7 +7,7 @@ public class Main {
         for (int i = 0; i < 10; i++) {
             str[i] = sc.next();
         }
-        for(int i = 9; i >= 1; i--) {
+        for(int i = 9; i >= 0; i--) {
             System.out.println(str[i]);
         }
     }
