@@ -20,7 +20,7 @@ public class Main {
 
         for (int i = 0; i <= str.length(); i++) {
             if (ch[i] == 'a' && ch[i + 1] == 'b') {
-                exists2 = false;
+                exists2 = true;
             }
         }
 
