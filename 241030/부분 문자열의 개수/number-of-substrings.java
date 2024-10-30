@@ -3,18 +3,21 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String str1 = sc.next();
-        String str2 = sc.next();
-        int length1 = str1.length();
-        int length2 = str2.length();
-        int cnt = 0;
-        for (int i = 0; i < length1; i++) {
-            if (length2 + i <= length1) {
-                if (str1.substring(i, i + length2).equals(str2.substring(0, length2))) {
-                    cnt++;
-                }
-            }
-        }
-        System.out.println(cnt);
+        
+        // 문자열을 입력받습니다.
+        String a = sc.next();
+        String b = sc.next();
+        int ans = 0;
+        
+        // 문자열의 길이를 구합니다.
+        int len = a.length();
+        
+        // 문자열 b가 등장하는 횟수를 구합니다.
+        for(int i = 0; i < len - 1; i++)
+            if(a.charAt(i) == b.charAt(0) && a.charAt(i + 1) == b.charAt(1))
+                ans++;
+        
+        // 출력
+        System.out.print(ans);
     }
 }
