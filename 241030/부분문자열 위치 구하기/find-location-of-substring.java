@@ -9,7 +9,7 @@ public class Main {
         int length2 = str2.length();
         int cnt = -1;
         for (int i = 0; i < length1; i++) {
-            if (i + length2 < length1) {
+            if (i + length2 <= length1) {
                 if ((str1.substring(i, i + length2)).equals(str2.substring(0, length2))) {
                     cnt = i;
                     break;
