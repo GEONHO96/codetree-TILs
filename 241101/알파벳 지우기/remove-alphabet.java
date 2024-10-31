@@ -9,27 +9,27 @@ public class Main {
         String b;
         String str1 = "";
         String str2 = "";
-
+        
         // 문자열을 입력받습니다.
         a = sc.next();
         b = sc.next();
 
         // 문자열의 길이를 구합니다.
-        int lenA = a.length();
-        int lenB = b.length();
+	    int lenA = a.length();
+	    int lenB = b.length();
         int cnt1 = 0;
         int cnt2 = 0;
 
         // a의 정수로 변환 가능한 부분을 다른 문자열로 옮깁니다.
         for(int i = 0; i < lenA; i++)
-            if(a.charAt(i) <= '9' && b.charAt(i) >= '0')
+            if(a.charAt(i) <= '9' && a.charAt(i) >= '0')
                 str1 += a.charAt(i);
 
-        // b의 정수로 변환 가능한 부분을 다른 문자열을 옮깁니다.
+        // b의 정수로 변환 가능한 부분을 다른 문자열로 옮깁니다.
         for(int i = 0; i < lenB; i++)
             if(b.charAt(i) <= '9' && b.charAt(i) >= '0')
                 str2 += b.charAt(i);
-
+        
         // 합쳐진 문자열을 숫자로 바꿉니다.
         int str1Int = Integer.parseInt(str1);
         int str2Int = Integer.parseInt(str2);
