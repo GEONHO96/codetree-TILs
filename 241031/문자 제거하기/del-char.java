@@ -7,7 +7,7 @@ public class Main {
         int length = str.length();
         while (length > 1) {
             int num = sc.nextInt();
-            if (num <= length) {
+            if (num < length) {
                 str = str.substring(0, num) + str.substring(num + 1);
                 length--;
             } else {
