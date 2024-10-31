@@ -20,10 +20,12 @@ public class Main {
                 System.out.println(str);
             }
             if (num == 3) {
+                String str2 = "";
                 for (int j = length - 1; j >= 0; j--) {
                     char ch = str.charAt(j);
-                    System.out.print(ch);
+                    str2 += ch;
                 }
+                System.out.println(str2);
             }
         }
     }
