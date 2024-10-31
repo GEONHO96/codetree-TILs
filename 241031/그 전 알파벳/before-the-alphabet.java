@@ -7,7 +7,7 @@ public class Main {
         if (ch == 'a') {
             System.out.println("z");
         } else {
-            System.out.println((char)ch - 1);
+            System.out.println((char)(ch - 1));
         }
     }
 }
