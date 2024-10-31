@@ -8,8 +8,8 @@ public class Main {
         while (length > 1) {
             int num = sc.nextInt();
             if (num <= length) {
-                length--;
                 str = str.substring(0, num) + str.substring(num + 1);
+                length--;
             } else {
                 length--;
                 str = str.substring(0, length);
