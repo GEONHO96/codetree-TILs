@@ -19,7 +19,7 @@ public class Main {
         numStr = Integer.toString(num);
 
         // 문자열을 좌측으로 한 칸 밉니다.
-        numStr = numStr.substring(1) + numStr.subString(0, 1);
+        numStr = numStr.substring(1) + numStr.substring(0, 1);
 
         // 구하고자 하는 문자열을 출력합니다.
         System.out.print(numStr);
