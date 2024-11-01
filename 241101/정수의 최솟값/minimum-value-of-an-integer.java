@@ -4,9 +4,9 @@ public class Main {
 
     public static int minNum(int a, int b, int c) {
         int min = a;
-        if (a > b) {
+        if (a >= b) {
             min = b;
-            if (b > c) {
+            if (b >= c) {
                 min = c;
             }
         }
