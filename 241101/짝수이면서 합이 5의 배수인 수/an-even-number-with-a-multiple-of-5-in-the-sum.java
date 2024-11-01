@@ -2,16 +2,17 @@ import java.util.Scanner;
 
 public class Main {
     public static boolean isMagicNumber(int n) {
-        return n % 2 == 0 && (n / 10 + n % 10) % 5 == 0;
+        return n % 2 == 0 && (n / 10 + (n % 10)) % 5 == 0;
     }
-
+    
     public static void main(String[] args) {
+        // 변수 선언 및 입력:
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        if (isMagicNumber(n)) {
+        
+        if(isMagicNumber(n))
             System.out.println("Yes");
-        } else {
+        else
             System.out.println("No");
-        }
     }
 }
