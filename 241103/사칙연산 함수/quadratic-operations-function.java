@@ -31,7 +31,7 @@ public class Main {
         if(o == '+')
             System.out.print(a + " + " + c + " = " + plus(a, c));
         else if (o == '-')
-            System.out.print(a + " - " + c + " = " + plus(a, c));
+            System.out.print(a + " - " + c + " = " + minus(a, c));
         else if (o == '*')
             System.out.print(a + " * " + c + " = " + times(a, c));
         else if (o == '/')
