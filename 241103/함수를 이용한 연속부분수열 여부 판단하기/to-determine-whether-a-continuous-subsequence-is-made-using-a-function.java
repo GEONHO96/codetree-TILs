@@ -20,10 +20,19 @@ public class Main {
                 satisfied = true;
             }
         } else if (n1 > n2) {
-            for (int i = 0; i < n1; i++) {
-                for (int j = 0; j < n2; j++) {
-                    if (arr1[i] == arr2[j] && arr1[i + 1] == arr2[j + 1]) {
+            if (n2 == 1) {
+                for (int i = 0; i < n1; i++) {
+                    if (arr1[i] == arr2[0]) {
                         satisfied = true;
+                    }
+                }
+            }
+            else {
+                for (int i = 0; i < n1; i++) {
+                    for (int j = 0; j < n2; j++) {
+                        if (arr1[i] == arr2[j] && arr1[i + 1] == arr2[j + 1]) {
+                            satisfied = true;
+                        }
                     }
                 }
             }
