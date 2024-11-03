@@ -15,13 +15,20 @@ public class Main {
         for (int i = 1; i <= n2; i++) {
             arr2[i] = sc.nextInt();
         }
-        for (int i = 1; i <= n1; i++) {
-            for (int j = 1; j < n2; j++) {
-                if (arr1[i] == arr2[j] && arr1[i + 1] == arr2[j + 1]) {
-                    satisfied = true;
+        if (n1 == 1 && n2 == 1) {
+            if (arr1[0] == arr2[0]) {
+                satisfied = true;
+            }
+        } else {
+            for (int i = 1; i <= n1; i++) {
+                for (int j = 1; j < n2; j++) {
+                    if (arr1[i] == arr2[j] && arr1[i + 1] == arr2[j + 1]) {
+                        satisfied = true;
+                    }
                 }
             }
         }
+        
         if (satisfied == true) {
             System.out.println("Yes");
         } else {
