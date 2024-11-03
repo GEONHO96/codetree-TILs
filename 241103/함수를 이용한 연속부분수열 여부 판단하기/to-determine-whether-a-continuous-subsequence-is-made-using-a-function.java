@@ -36,6 +36,12 @@ public class Main {
                     }
                 }
             }
+        } else if (n1 == n2) {
+            for (int i = 0; i < n1; i++) {
+                if (arr1[i] == arr2[i]) {
+                    satisfied = true;
+                }
+            }
         }
 
         if (satisfied == true) {
