@@ -30,7 +30,7 @@ public class Main {
                 System.out.println("No");
             }            
         }
-        if (n1 <= n2) {
+        if (n1 < n2) {
             if (cnt == n1 - 1) {
                 System.out.println("Yes");
             }
