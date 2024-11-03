@@ -25,7 +25,7 @@ public class Main {
         if (cnt == n2 - 1) {
             System.out.println("Yes");
         }
-        if (cnt == 0) {
+        if (cnt == 0 && cnt != n2 - 1) {
             System.out.println("No");
         }
     }
