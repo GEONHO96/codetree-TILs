@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
+public class Main {    
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -24,7 +24,8 @@ public class Main {
         }
         if (cnt == n2 - 1) {
             System.out.println("Yes");
-        } else {
+        }
+        if (cnt == 0) {
             System.out.println("No");
         }
     }
