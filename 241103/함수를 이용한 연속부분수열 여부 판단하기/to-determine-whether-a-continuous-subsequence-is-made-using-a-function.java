@@ -20,8 +20,8 @@ public class Main {
                 satisfied = true;
             }
         } else {
-            for (int i = 1; i <= n1; i++) {
-                for (int j = 1; j < n2; j++) {
+            for (int i = 0; i < n1; i++) {
+                for (int j = 0; j < n2; j++) {
                     if (arr1[i] == arr2[j] && arr1[i + 1] == arr2[j + 1]) {
                         satisfied = true;
                     }
