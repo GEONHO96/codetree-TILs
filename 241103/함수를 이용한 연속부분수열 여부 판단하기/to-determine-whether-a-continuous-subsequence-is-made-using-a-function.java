@@ -24,6 +24,8 @@ public class Main {
                 for (int i = 0; i < n1; i++) {
                     if (arr1[i] == arr2[0]) {
                         satisfied = true;
+                    } else {
+                        satisfied = false;
                     }
                 }
             }
