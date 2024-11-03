@@ -33,9 +33,9 @@ public class Main {
             else {
                 for (int i = 0; i < n1; i++) {
                     for (int j = 0; j < n2; j++) {
-                        if (arr1[i] == arr2[j] && arr1[i + 1] == arr2[j + 1]) {
-                            satisfied = true;
-                        }
+                        if (arr1[i] == arr2[j] && arr1[i + 1] != arr2[j + 1]) {
+                            satisfied = false;
+                        } 
                     }
                 }
             }
