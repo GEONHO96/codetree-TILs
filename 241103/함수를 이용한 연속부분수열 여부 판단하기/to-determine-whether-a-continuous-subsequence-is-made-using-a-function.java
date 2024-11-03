@@ -22,11 +22,21 @@ public class Main {
                 }
             }
         }
-        if (cnt == n2 - 1) {
-            System.out.println("Yes");
+        if (n1 >= n2) {
+            if (cnt == n2 - 1) {
+                System.out.println("Yes");
+            }
+            else {
+                System.out.println("No");
+            }            
         }
-        if (cnt == 0 && cnt != n2 - 1) {
-            System.out.println("No");
+        if (n1 <= n2) {
+            if (cnt == n1 - 1) {
+                System.out.println("Yes");
+            }
+            else {
+                System.out.println("No");
+            }           
         }
     }
 }
