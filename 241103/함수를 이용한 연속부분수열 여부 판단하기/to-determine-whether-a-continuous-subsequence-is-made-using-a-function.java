@@ -9,10 +9,10 @@ public class Main {
         int[] arr1 = new int[101];
         int[] arr2 = new int[101];
         boolean satisfied = false;
-        for (int i = 1; i <= n1; i++) {
+        for (int i = 0; i < n1; i++) {
             arr1[i] = sc.nextInt();
         }
-        for (int i = 1; i <= n2; i++) {
+        for (int i = 0; i < n2; i++) {
             arr2[i] = sc.nextInt();
         }
         if (n1 == 1 && n2 == 1) {
@@ -49,7 +49,7 @@ public class Main {
             }
         }
 
-        if (satisfied == true) {
+        if (satisfied) {
             System.out.println("Yes");
         } else {
             System.out.println("No");
