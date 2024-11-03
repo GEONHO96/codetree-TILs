@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {    
+public class Main {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -19,7 +19,7 @@ public class Main {
             if (arr1[0] == arr2[0]) {
                 satisfied = true;
             }
-        } else {
+        } else if (n1 > n2) {
             for (int i = 0; i < n1; i++) {
                 for (int j = 0; j < n2; j++) {
                     if (arr1[i] == arr2[j] && arr1[i + 1] == arr2[j + 1]) {
@@ -28,11 +28,11 @@ public class Main {
                 }
             }
         }
-        
+
         if (satisfied == true) {
             System.out.println("Yes");
         } else {
             System.out.println("No");
-        }        
+        }
     }
 }
