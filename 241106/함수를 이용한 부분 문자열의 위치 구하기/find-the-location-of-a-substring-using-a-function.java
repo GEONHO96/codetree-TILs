@@ -21,6 +21,7 @@ public class Main {
             if (objectString.charAt(0) == inputString.charAt(i)) {
                 if (inputString.substring(i, N).equals(objectString)) {
                     k = i;
+                    break;
                 }
             }
         }
