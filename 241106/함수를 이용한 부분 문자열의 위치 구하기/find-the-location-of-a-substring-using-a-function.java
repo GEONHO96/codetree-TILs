@@ -6,10 +6,8 @@ public class Main {
         int N = inputString.length();
         int M = objectString.length();
         for (int i = 0; i < N; i++) {
-            if (objectString.charAt(0) == inputString.charAt(i)) {
-                if (inputString.substring(i, i + M).equals(objectString.substring(0, M))) {
-                    return true;
-                }
+            if (objectString.charAt(0) == inputString.charAt(i) && inputString.substring(i, i + M).equals(objectString.substring(0, M))) {
+                return true;
             }
         }
         return false;
