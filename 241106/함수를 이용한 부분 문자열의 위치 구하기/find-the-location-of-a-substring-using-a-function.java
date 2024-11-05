@@ -4,9 +4,10 @@ public class Main {
 
     public static boolean isPartialString(String inputString, String objectString) {
         int N = inputString.length();
+        int M = objectString.length();
         for (int i = 0; i < N; i++) {
             if (objectString.charAt(0) == inputString.charAt(i)) {
-                if (inputString.substring(i, N).equals(objectString)) {
+                if (inputString.substring(i, N).equals(objectString.substring(0, M))) {
                     return true;
                 }
             }
@@ -16,10 +17,11 @@ public class Main {
 
     public static int partialString(String inputString, String objectString) {
         int N = inputString.length();
+        int M = objectString.length();
         int k = 0;
         for (int i = 0 ; i < N; i++) {
             if (objectString.charAt(0) == inputString.charAt(i)) {
-                if (inputString.substring(i, N).equals(objectString)) {
+                if (inputString.substring(i, N).equals(objectString.substring(0, M))) {
                     k = i;
                     break;
                 }
