@@ -1,17 +1,19 @@
 import java.util.Scanner;
 
 public class Main {
-    public static void oneToNumSum(int N) {
-        int sum = 0;
-        for (int i = 1; i <= N; i++) {
-            sum += i;
-        }
-        System.out.print(sum);
+    public static int sum(int n) {
+        if(n == 0)
+            return 0;
+
+        return sum(n - 1) + n;
     }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
-        oneToNumSum(N);
+
+        // 변수 선언 및 입력:
+        int n = sc.nextInt();
+
+        System.out.println(sum(n));
     }
 }
