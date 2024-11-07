@@ -10,8 +10,8 @@ public class Main {
                 N /= 2;
             }
             if (N % 2 == 1) {
-                N /= 3;
                 cnt++;
+                N /= 3;
             }
         }
         return cnt;
