@@ -9,7 +9,7 @@ public class Main {
                 cnt++;
                 N /= 2;
             }
-            if (N % 2 == 1) {
+            else if (N % 2 == 1) {
                 cnt++;
                 N /= 3;
             }
