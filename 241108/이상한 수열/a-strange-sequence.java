@@ -1,17 +1,21 @@
 import java.util.Scanner;
 
 public class Main {
-    public static int sequence(int N) {
-        if (N == 1)
+    // a번째 수열 값을 반환합니다.
+    public static int strangeSequence(int a) {
+        if(a == 1)
             return 1;
-        if (N == 2)
+        if(a == 2)
             return 2;
-        return sequence(N / 3) + sequence(N - 1);
+
+        return strangeSequence(a / 3) + strangeSequence(a - 1);
     }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
-        System.out.println(sequence(N));
+        // 변수 선언 및 입력:
+        int n = sc.nextInt();
+
+        System.out.print(strangeSequence(n));
     }
 }
