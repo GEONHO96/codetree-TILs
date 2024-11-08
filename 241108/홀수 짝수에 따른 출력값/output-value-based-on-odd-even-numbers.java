@@ -1,23 +1,22 @@
 import java.util.Scanner;
 
 public class Main {
-    public static int printNumber(int N) {
-        int sum = 0;
-        if (N % 2 == 0) {
-            for (int i = 2; i <= N; i += 2) {
-                sum += i;
-            }
-        } else {
-            for (int i = 1; i <= N; i += 2) {
-                sum += i;
-            }
-        }
-        return sum;
+    // 1부터 n까지의 n과 홀짝이 같은 수들의 합을 반화합니다.
+    public static int getNum(int n) {
+        if(n == 1)
+            return 1;
+        if(n == 2)
+            return 2;
+
+        // n과 홀짝이 같은 수만을 재귀함수로 호출합니다.
+        return getNum(n - 2) + n;
     }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
-        System.out.println(printNumber(N));
+        // 변수 선언 및 입력:
+        int n = sc.nextInt();
+
+        System.out.print(getNum(n));
     }
 }
