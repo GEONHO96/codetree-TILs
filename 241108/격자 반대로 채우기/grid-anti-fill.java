@@ -3,30 +3,38 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
+        // n을 입력받습니다.
         int n = sc.nextInt();
-        int[][] arr = new int[n][n];
-        if (n % 2 == 1) {
-            for (int i = 0; i < n; i++) {
-                for (int j = 0; j < n; j++) {
-                    if (j % 2 == 0) {
-                        System.out.print((n - j) * n - i + " ");
-                    } else {
-                        System.out.print((n - j - 1) * n + i + 1 + " ");
-                    }
+
+        // 2차원 배열을 구현합니다.
+        int[][] arr = new int[10][10];
+
+        // 격자를 채워줍니다.
+        int count = 1;
+        for(int col = n - 1; col >= 0; col--) {
+            if ((n - 1 - col) % 2 == 0) {
+                // 이 케이스에는 아래에서 위로 값을 채워줍니다.
+                for(int row = n - 1; row >= 0; row--) {
+                    arr[row][col] = count;
+                    count++;
                 }
-                System.out.println();
             }
-        } else {
-            for (int i = 0; i < n; i++) {
-                for (int j = 0; j < n; j++) {
-                    if (j % 2 == 0) {
-                        System.out.print(n * n - (n - 1 - i) - j * n + " ");
-                    } else {
-                        System.out.print(n * (n - j) - i + " ");
-                    }
+            else {
+                // 이 케이스에는 위에서 아래로 값을 채워줍니다.
+                for(int row = 0; row < n; row++) {
+                    arr[row][col] = count;
+                    count++;
                 }
-                System.out.println();
             }
+        }
+
+        // 출력:
+        for(int row = 0; row < n; row++) {
+            for(int col = 0; col < n; col++) {
+                System.out.print(arr[row][col] + " ");
+            }
+            System.out.println();
         }
     }
 }
