@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 // Bomb 정보를 나타내는 클래스 선언
-class bomb {
+class Bomb {
     String unlockCode;
     char linearColor;
     int time;
