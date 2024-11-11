@@ -42,8 +42,8 @@ public class Main {
         }
         
         // 결과를 출력합니다.
-        System.out.println("name = " + people[lastIdx].name);
-        System.out.println("addr = " + people[lastIdx].streetAddress);
-        System.out.println("city = " + people[lastIdx].region);
+        System.out.println("name " + people[lastIdx].name);
+        System.out.println("addr " + people[lastIdx].streetAddress);
+        System.out.println("city " + people[lastIdx].region);
     }
 }
