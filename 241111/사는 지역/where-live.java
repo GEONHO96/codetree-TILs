@@ -1,40 +1,49 @@
 import java.util.Scanner;
-import java.util.Arrays;
-import java.util.Comparator;
 
-class Address {
+// Person 정보를 나타내는 클래스 선언
+class Person {
     String name;
-    String streetNumber;
+    String streetAddress;
     String region;
 
-    public Address(String name, String streetNumber, String region) {
+    public Person(String name, String streetAddress, String region) {
         this.name = name;
-        this.streetNumber = streetNumber;
+        this.streetAddress = streetAddress;
         this.region = region;
     }
+    Person(){}
 };
 
 public class Main {
+    public static final int MAXN = 10;
+
+    public static Person[] people = new Person[MAXN];
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
+        // 변수 선언 및 입력
         int n = sc.nextInt();
-        Address[] address = new Address[n];
-        for (int i = 0; i < n; i++) {
+
+        for(int i = 0; i < n; i++) {
             String name = sc.next();
-            String streetNumber = sc.next();
+            String address = sc.next();
             String region = sc.next();
-            address[i] = new Address(name, streetNumber, region);
+
+            // 객체 생성 및 리스트에 추가
+            people[i] = new Person(name, address, region);
         }
-
-        Arrays.sort(address, new Comparator<Address>() {
-            @Override
-            public int compare(Address a, Address b) {
-                return a.name.compareTo(b.name);
-            }
-        });
-
-        System.out.println("name " + address[n - 1].name);
-        System.out.println("addr " + address[n - 1].streetNumber);
-        System.out.println("city " + address[n - 1].region);
+        
+        // 사전순으로 이름이 가장 느린 사람 찾기
+        int lastIdx = 0;
+        for(int i = 1; i < n; i++) {
+            if(people[i].name.compareTo(people[lastIdx].name) > 0)
+                lastIdx = i;
+        }
+        
+        // 결과를 출력합니다.
+        System.out.println("name = " + people[lastIdx].name);
+        System.out.println("addr = " + people[lastIdx].streetAddress);
+        System.out.println("city = " + people[lastIdx].region);
     }
 }
