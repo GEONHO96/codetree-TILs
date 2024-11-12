@@ -50,7 +50,7 @@ public class Main {
         System.out.println();
 
         // custom comparator를 활용한 정렬
-        Arrays.sort(students, new Comparator<>() {
+        Arrays.sort(students, new Comparator<Student>() {
             @Override
             public int compare(Student a, Student b) { // 키 기준 내림차순 정렬합니다.
                 return b.height - a.height;
