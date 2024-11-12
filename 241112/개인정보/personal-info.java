@@ -58,6 +58,7 @@ public class Main {
         });
 
         // 키순으로 정렬한 결과를 출력합니다.
+        System.out.println("height");
         for (int i = 0; i < n; i++){
             System.out.print(students[i].name + " ");
             System.out.print(students[i].height + " ");
