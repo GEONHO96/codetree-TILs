@@ -11,11 +11,9 @@ public class Main {
             int x2 = sc.nextInt();
             for (int j = x1; j <= x2; j++) {
                 arr[j]++;
+                max = Math.max(max, arr[j]);
             }
         }
-        for (int i = 1; i <= n; i++) {
-            max = Math.max(arr[i], max);
-        }
-        System.out.println(max + 1);
+        System.out.println(max);
     }
 }
