@@ -17,7 +17,7 @@ public class Main {
 
         // 모든 구간의 시작점을 잡아봅니다.
         int maxSum = 0;
-        for(int i = 0; i < n - k; i++) {
+        for(int i = 0; i <= n - k; i++) {
             // 해당 구간 내 원소의 합을 구합니다.
             int sum = 0;
             for(int j = i; j < i + k; j++)
