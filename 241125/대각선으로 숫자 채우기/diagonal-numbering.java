@@ -10,37 +10,26 @@ public class Main {
         m = sc.nextInt();
         int count = 1;
 
-        // 2차원 배열을 구현합니다.
+        // 2차원 배열을 구합니다.
         int[][] arr = new int[100][100];
 
         // Step 1:
-        for(int startCol = 0; startCol < m; startCol++) {
-            int currRow = 0;
-            int currCol = startCol;
+        for(int row = 0; row < n; row++) {
+            for(int col = 0; col < m; col++)
+                // Step 2:
+                if(arr[row][col] == 0) {
+                    int currCol = col;
+                    int currRow = row;
 
-            while(currCol >= 0 && currRow < n) {
-                arr[currRow][currCol] = count;
+                    while(currCol >= 0 && currRow < n) {
+                        arr[currRow][currCol] = count;
 
-                // 변수 업데이트 : 
-                currRow++;
-                currCol--;
-                count++;
-            }
-        }
-
-        // Step 2:
-        for(int startRow = 1; startRow < n; startRow++) {
-            int currRow = startRow;
-            int currCol = m - 1;
-
-            while(currCol >= 0 && currRow < n) {
-                arr[currRow][currCol] = count;
-
-                // 변수 업데이트
-                currRow++;
-                currCol--;
-                count++;
-            }
+                        // 변수 업데이트 : 
+                        currRow++;
+                        currCol--;
+                        count++;
+                    }
+                }
         }
 
         // 출력:
