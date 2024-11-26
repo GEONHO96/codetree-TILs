@@ -14,29 +14,17 @@ public class Main {
         // N을 B진법으로 변환
         int temp = N;
         while (temp > 0) {
-            int remainder = temp % B;
-            if (remainder < 10) {
-                sb.append((char) (remainder + '0')); // 숫자 '0' ~ '9'
-            } else {
-                sb.append((char) (remainder - 10 + 'A')); // 문자 'A' ~ 'Z'
-            }
-            temp /= B;
+            sb.append(temp % B); // 나머지를 저장
+            temp /= B; // B로 나누기
         }
         
         // 진법 변환 결과 뒤집기
-        String converted = sb.reverse().toString();
+        String converted = sb.reverse().toString(); 
         
         // B진법 수를 다시 10진법으로 변환
         int restored = 0;
         for (int i = 0; i < converted.length(); i++) {
-            char c = converted.charAt(i);
-            int value;
-            if ('0' <= c && c <= '9') {
-                value = c - '0';
-            } else {
-                value = c - 'A' + 10;
-            }
-            restored = restored * B + value;
+            restored = restored * B + (converted.charAt(i) - '0');
         }
         
         // 출력
