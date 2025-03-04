@@ -19,21 +19,17 @@ public class Main {
             if (command.equals("push")) {
                 int K = Integer.parseInt(st.nextToken());
                 queue.add(K);
-            }
-            if (command.equals("pop")) {
+            } else if (command.equals("pop")) {
                 bw.write(queue.poll() + "\n");
-            }
-            if (command.equals("size")) {
+            } else if (command.equals("size")) {
                 bw.write(queue.size() + "\n");
-            }
-            if (command.equals("size")) {
+            } else if (command.equals("empty")) {
                 if (queue.isEmpty()) {
                     bw.write(1 + "\n");
                 } else {
                     bw.write(0 + "\n");
                 }
-            }
-            if (command.equals("front")) {
+            } else if (command.equals("front")) {
                 bw.write(queue.peek() + "\n");
             }
         }
