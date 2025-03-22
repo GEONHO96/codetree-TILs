@@ -10,12 +10,12 @@ public class Main {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         int N = Integer.parseInt(br.readLine());
         int[] dp = new int[N + 1];
+        dp[0] = 1;
         dp[1] = 1;
-        dp[2] = 1;
-        for (int i = 3; i <= N; i++) {
+        for (int i = 2; i <= N; i++) {
             dp[i] = dp[i - 2] + dp[i - 1];
         }
-        bw.write(dp[N] + "\n");
+        bw.write(dp[N - 1] + "\n");
         bw.flush();
         bw.close();
         br.close();
