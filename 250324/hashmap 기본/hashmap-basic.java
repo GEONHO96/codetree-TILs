@@ -1,35 +1,37 @@
-import java.util.Scanner;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.HashMap;
 
 public class Main {
-    // 변수 선언
-    public static int n;
-    public static HashMap<Integer, Integer> m = new HashMap<>();
-
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        // 입력:
-        n = sc.nextInt();
-
-        for (int i = 0; i < n; i++) {
-            String command = sc.next();
-
-            if(command.equals("add")) {
-                int k = sc.nextInt();
-                int v = sc.nextInt();
-                m.put(k, v);
-            }
-            else if(command.equals("remove")) {
-                int k = sc.nextInt();
-                m.remove(k);
-            }
-            else {
-                int k = sc.nextInt();
-                if(!m.containsKey(k)) 
-                    System.out.println("None");
-                else
-                    System.out.println(m.get(k));
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        int N = Integer.parseInt(br.readLine());
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < N; i++) {
+            String[] parts = br.readLine().split(" ");
+            String cmd = parts[0];
+            if (cmd.equals("add")) {
+                int key = Integer.parseInt(parts[1]);
+                int value = Integer.parseInt(parts[2]);
+                map.put(key, value);
+            } else if (cmd.equals("find")) {
+                int key = Integer.parseInt(parts[1]);
+                if (map.containsKey(key)) {
+                    bw.write(map.get(key) + "\n");
+                } else {
+                    bw.write("None\n");
+                }
+            } else if (cmd.equals("remove")) {
+                int key = Integer.parseInt(parts[1]);
+                map.remove(key);
             }
         }
+        bw.flush();
+        bw.close();
+        br.close();
     }
 }
