@@ -21,12 +21,7 @@ public class Main {
         // 각 숫자가 몇 번씩 나왔는지를
         // hashmap에 기록해줍니다.
         for(int i = 0; i < n; i++) {
-            // 처음 나온 숫자라면 1을 직접 적어줘야 합니다.
-            if(!freq.containsKey(arr[i]))
-                freq.put(arr[i], 1);
-            // 이미 나와있던 숫자라면 1을 더해줍니다.
-            else
-                freq.put(arr[i], freq.get(arr[i]) + 1);
+            freq.put(arr[i], freq.getOrDefault(arr[i], 0) + 1);
         }
 
         // m개의 질의에 대해
@@ -34,12 +29,7 @@ public class Main {
         for(int i = 0; i < m; i++) {
             int num = sc.nextInt();
 
-            // 처음 나온 숫자라면 0을 출력합니다.
-            if(!freq.containsKey(num))
-                System.out.print(0 + " ");
-            // 나온 적이 있는 숫자라면, 빈도수를 출력해줍니다.
-            else
-                System.out.print(freq.get(num) + " ");
+            System.out.print(freq.getOrDefault(num, 0) + " ");
         }
     }
 }
