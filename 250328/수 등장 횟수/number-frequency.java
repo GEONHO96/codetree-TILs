@@ -1,35 +1,32 @@
-import java.util.Scanner;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.StringTokenizer;
 import java.util.HashMap;
 
-public class Main {    
-    public static final int MAX_N = 100000;
-    
-    // 변수 선언
-    public static int n, m;
-    public static int[] arr = new int[MAX_N];
-    public static HashMap<Integer, Integer> freq = new HashMap<>();
-
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        // 입력:
-        n = sc.nextInt();
-        m = sc.nextInt();
-
-        for(int i = 0; i < n; i++)
-            arr[i] = sc.nextInt();
-        
-        // 각 숫자가 몇 번씩 나왔는지를
-        // hashmap에 기록해줍니다.
-        for(int i = 0; i < n; i++) {
-            freq.put(arr[i], freq.getOrDefault(arr[i], 0) + 1);
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int N = Integer.parseInt(st.nextToken());
+        int M = Integer.parseInt(st.nextToken());
+        HashMap<Integer, Integer> freq = new HashMap<>();
+        st = new StringTokenizer(br.readLine());
+        for (int i = 0; i < N; i++) {
+            int num = Integer.parseInt(st.nextToken());
+            freq.put(num, freq.getOrDefault(num, 0) + 1);
         }
-
-        // m개의 질의에 대해
-        // 몇 번씩 나왔는지를 출력합니다.
-        for(int i = 0; i < m; i++) {
-            int num = sc.nextInt();
-
-            System.out.print(freq.getOrDefault(num, 0) + " ");
+        st = new StringTokenizer(br.readLine());
+        for (int i = 0; i < M; i++) {
+            int query = Integer.parseInt(st.nextToken());
+            int count = freq.getOrDefault(query, 0);
+            bw.write(count + " ");
         }
+        bw.flush();
+        bw.close();
+        br.close();
     }
 }
