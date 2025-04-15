@@ -1,31 +1,30 @@
-import java.util.Scanner;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.Stack;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        // 변수 선언 및 입력
-        String str = sc.next();
-        Stack<Character> s = new Stack<>(); 
-        
-        for(int i = 0; i < str.length(); i++) {
-            if(str.charAt(i) == '(')
-                s.push('(');
-            else {
-                if(s.empty()) {
-                    System.out.print("No");
-                    System.exit(0);
-                }
-                s.pop();
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        String string = br.readLine();
+        Stack<Character> stack = new Stack<>();
+        for (char c : string.toCharArray()) {
+            if (!stack.isEmpty() && stack.peek() == '(' && c == ')') {
+                stack.pop();
+            } else {
+                stack.push(c);
             }
         }
-
-        if(s.isEmpty()) {
-            System.out.print("Yes");
+        if (stack.isEmpty()) {
+            bw.write("Yes");
+        } else {
+            bw.write("No");
         }
-        else {
-            System.out.print("No");
-        }
+        bw.flush();
+        bw.close();
+        br.close();
     }
 }
