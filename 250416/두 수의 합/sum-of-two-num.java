@@ -1,38 +1,35 @@
-import java.util.Scanner;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.HashMap;
+import java.util.StringTokenizer;
 
 public class Main {
-    public static final int MAX_N = 100000;
-    
-    // 변수 선언
-    public static int n, k;
-    public static long[] arr = new long[MAX_N];
-    public static HashMap<Long, Integer> count = new HashMap<>();
-
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        // 입력:
-        n = sc.nextInt();
-        k = sc.nextInt();
-        for(int i = 0; i < n; i++)
-            arr[i] = sc.nextInt();
-
-        int ans = 0;
-
-        // 배열을 앞에서부터 순회하며 쌍을 만들어줍니다.
-        for(int i = 0; i < n; i++) {
-            long diff = k - arr[i];
-            // 가능한 모든 쌍의 수를 세어줍니다.
-            if(count.containsKey(diff))
-                ans += count.get(diff);
-
-            // 현재 숫자의 개수를 하나 증가시켜줍니다.
-            if(!count.containsKey(arr[i]))
-                count.put(arr[i], 1);
-            else
-                count.put(arr[i], count.get(arr[i]) + 1);
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int N = Integer.parseInt(st.nextToken());
+        int K = Integer.parseInt(st.nextToken());
+        int[] arr = new int[N];
+        st = new StringTokenizer(br.readLine());
+        for (int i = 0; i < N; i++) {
+            arr[i] = Integer.parseInt(st.nextToken());
         }
-
-        System.out.print(ans);
+        HashMap<Integer, Integer> map = new HashMap<>();
+        int count = 0;
+        for (int num : arr) {
+            int target = K - num;
+            if (map.containsKey(target)) {
+                count += map.get(target);
+            }
+            map.put(num, map.getOrDefault(num, 0) + 1);
+        }
+        bw.write(count + "\n");
+        bw.flush();
+        bw.close();
+        br.close();
     }
 }
