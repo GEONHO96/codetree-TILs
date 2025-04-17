@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Main {
     public static final int MOD = 10007;
     public static final int MAX_N = 1000;
