@@ -3,10 +3,10 @@ import java.util.Scanner;
 public class Main {
     public static final int MOD = 10007;
     public static final int MAX_N = 1000;
-
+    
     // 변수 선언
     public static int n;
-
+    
     public static int[] dp = new int[MAX_N + 1];
 
     public static void main(String[] args) {
