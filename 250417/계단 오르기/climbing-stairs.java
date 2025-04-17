@@ -15,7 +15,7 @@ public class Main {
         dp[2] = 1;
         dp[3] = 1;
         for (int i = 4; i <= N; i++) {
-            dp[i] = dp[i - 2] + dp[i - 3];
+            dp[i] = (dp[i - 2] + dp[i - 3]) % 10007;
         }
         bw.write(dp[N] + "\n");
         bw.flush();
