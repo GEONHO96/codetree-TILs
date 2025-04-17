@@ -14,7 +14,7 @@ public class Main {
         dp[1] = 0;
         dp[2] = 1;
         for (int i = 3; i <= N; i++) {
-            dp[i] = Math.max(dp[i - 2], dp[i - 3]) + 1;
+            dp[i] = Math.max(dp[i - 1], Math.max(dp[i - 2], dp[i - 3]) + 1);
         }
         bw.write(dp[N] + "\n");
         bw.flush();
