@@ -1,4 +1,4 @@
-import java.io.IOException;
+import java.io.IOExcption;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
@@ -9,16 +9,17 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         int N = Integer.parseInt(br.readLine());
-        int[] dp = new int[N + 1];
-        dp[0] = 0;
+        int[] dp = new int[Math.max(N + 1, 4)];
+        dp[0] = 1;
         dp[1] = 0;
         dp[2] = 1;
-        for (int i = 3; i <= N; i++) {
-            dp[i] = (Math.max(dp[i - 1], Math.max(dp[i - 2], dp[i - 3]) + 1)) % 10007;
+        dp[3] = 1;
+        for (int i = 4; i <= N; i++) {
+            dp[i] = dp[i - 2] + dp[i - 3];
         }
         bw.write(dp[N] + "\n");
         bw.flush();
         bw.close();
-        br.close();    
+        br.close();
     }
 }
