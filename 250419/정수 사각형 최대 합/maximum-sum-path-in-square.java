@@ -1,31 +1,43 @@
-import java.io.IOException;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.util.StringTokenizer;
+import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        int N = Integer.parseInt(br.readLine());
-        int[][] board = new int[N + 1][N + 1];
-        int[][] dp = new int[N + 1][N + 1];
-        for (int i = 1; i <= N; i++) {
-            StringTokenizer st = new StringTokenizer(br.readLine());
-            for (int j = 1; j <= N; j++) {
-                board[i][j] = Integer.parseInt(st.nextToken());
-            }
-        }
-        for (int i = 1; i <= N; i++) {
-            for (int j = 1; j <= N; j++) {
-                dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]) + board[i][j];
-            }
-        }
-        bw.write(dp[N][N] + "\n");
-        bw.flush();
-        bw.close();
-        br.close();
+    public static final int MAX_NUM = 1000;
+
+    public static int n;
+    public static int[][] num = new int[MAX_NUM][MAX_NUM];
+    public static int[][] dp = new int[MAX_NUM][MAX_NUM];
+
+    public static void initialize() {
+        // 시작점의 경우 dp[0][0] = num[0][0]으로 초기값을 설정해줍니다
+        dp[0][0] = num[0][0];
+
+        // 최좌측 열의 초기값을 설정해줍니다.
+        for(int i = 1; i < n; i++) 
+            dp[i][0] = dp[i - 1][0] + num[i][0];
+        
+        // 최상단 행의 초기값을 설정해줍니다.
+        for(int j = 1; j < n; j++)
+            dp[0][j] = dp[0][j - 1] + num[0][j];
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        n = sc.nextInt();
+        for(int i = 0; i < n; i++)
+            for(int j = 0; j < n; j++)
+                num[i][j] = sc.nextInt();
+
+        // 초기값 설정
+        initialize();
+
+        // 탐색하는 위치의 위에 값과 좌측 값 중에 큰 값에
+        // 해당 위치의 숫자를 더해줍니다. 
+        for(int i = 1; i < n; i++)
+            for(int j = 1; j < n; j++)
+                dp[i][j] = Math.max(dp[i - 1][j],
+                                    dp[i][j - 1]) + num[i][j];
+        
+        System.out.println(dp[n - 1][n - 1]);
     }
 }
