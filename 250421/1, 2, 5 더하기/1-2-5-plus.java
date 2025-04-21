@@ -16,7 +16,8 @@ public class Main {
             if (i >= 2) dp[i] += dp[i - 2];
             if (i >= 5) dp[i] += dp[i - 5];
         }
-        bw.write(dp[N] % 10007 + "\n");
+        dp[N] %= 10007;
+        bw.write(dp[N] + "\n");
         bw.flush();
         bw.close();
         br.close();
