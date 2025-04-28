@@ -22,18 +22,22 @@ public class Main {
         Arrays.sort(arr);
         Set<Integer> set = new TreeSet<>();
         int subtract = 0;
-        for (int i = 0; i < N - 1; i++) {
-            for (int j = i + 1; j < N; j++) {
-                set.add(arr[j] - arr[i]);
+        int min = Integer.MAX_VALUE;
+        int i = 0, j = 0;
+        while (i < N && j < N) {
+            int diff = arr[j] - arr[i];
+            if (diff < M) {
+                j++;
+            } else {
+                min = Math.min(min, diff);
+                i++;
             }
         }
-        int[] newArr = set.stream().mapToInt(Integer::intValue).toArray();
-        int min = Integer.MAX_VALUE;
-        for (int i = 0; i < newArr.length; i++) {
-            if (newArr[i] >= M) min = Math.min(min, newArr[i]);
+        if (min == Integer.MAX_VALUE) {
+            bw.write("-1\n");
+        } else {
+            bw.write(min + "\n");
         }
-        if (min != Integer.MAX_VALUE) bw.write(min + "\n");
-        else bw.write(-1 + "\n");
         bw.flush();
         bw.close();
         br.close();
