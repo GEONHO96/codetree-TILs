@@ -16,7 +16,7 @@ public class Main {
             StringTokenizer st = new StringTokenizer(br.readLine());
             int x1 = Integer.parseInt(st.nextToken());
             int x2 = Integer.parseInt(st.nextToken());
-            for (int j = x1 + 100; j <= x2 + 100; j++) {
+            for (int j = x1 + 100; j < x2 + 100; j++) {
                 arr[j] += 1;
             }
         }
