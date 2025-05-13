@@ -1,47 +1,44 @@
-import java.util.Scanner;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.StringTokenizer;
 
 public class Main {
-    public static final int MAX_N = 100;
-    public static final int DIR_NUM = 4;
-
-    public static int n;
-    public static int[][] arr = new int[MAX_N][MAX_N];
-    
-    public static int[] dx = new int[]{0, 1,  0, -1};
-    public static int[] dy = new int[]{1, 0, -1,  0};
-
-    public static boolean inRange(int x, int y) {
-        return 0 <= x && x < n && 0 <= y && y < n;
+    static int N;
+    static int[][] arr;
+    static int[] dx = {-1, 1, 0, 0};
+    static int[] dy = {0, 0, -1, 1};
+    static boolean inRange(int x, int y) {
+        return (0 <= x && x < N && 0 <= y && y < N);
     }
-
-    public static int adjacentCnt(int x, int y) {
-        int cnt = 0;
-        for(int i = 0; i < DIR_NUM; i++) {
-            int nx = x + dx[i], ny = y + dy[i];
-            if(inRange(nx, ny) && arr[nx][ny] == 1)
-                cnt++;
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        N = Integer.parseInt(br.readLine());
+        arr = new int[N][N];
+        for (int i = 0; i < N; i++) {
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            for (int j = 0; j < N; j++) {
+                arr[i][j] = Integer.parseInt(st.nextToken());
+            }
         }
-        
-        return cnt;
-    }
-
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        // 입력
-        n = sc.nextInt();
-
-        for(int i = 0; i < n; i++)
-            for(int j = 0; j < n; j++)
-                arr[i][j] = sc.nextInt();
-        
-        // 각 칸을 탐색합니다.
         int ans = 0;
-        for(int i = 0; i < n; i++)
-            for(int j = 0; j < n; j++)
-                if(adjacentCnt(i, j) >= 3)
-                    ans++;
-        
-        System.out.println(ans);
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                int cnt = 0;
+                for (int k = 0; k < 4; k++) {
+                    int nx = i + dx[k];
+                    int ny = j + dy[k];
+                    if (inRange(nx, ny) && arr[nx][ny] == 1) cnt++;
+                }
+                if (cnt >= 3) ans++;
+            }
+        }
+        bw.write(ans + "\n");
+        bw.flush();
+        bw.close();
+        br.close();
     }
 }
