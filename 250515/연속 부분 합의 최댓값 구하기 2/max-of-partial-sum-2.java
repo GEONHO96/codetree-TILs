@@ -3,6 +3,7 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.StringTokenizer;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -17,7 +18,7 @@ public class Main {
         int currentSum = arr[0];
         int maxSum = arr[0];
         for (int i = 0; i < N; i++) {
-            currentSum = Math.max(arr[i], arr[i] + currentSum[i]);
+            currentSum = Math.max(arr[i], arr[i] + currentSum);
             maxSum = Math.max(maxSum, currentSum);
         }
         bw.write(maxSum + "\n");
