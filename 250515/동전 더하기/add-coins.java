@@ -1,28 +1,34 @@
-import java.util.Scanner;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.StringTokenizer;
+import java.util.Arrays;
+import java.util.Collections;
 
-public class Main {    
-    public static final int MAX_N = 10;
-    
-    // 변수 선언
-    public static int n, k;
-    public static int[] coins = new int[MAX_N];
-    
-    public static int ans;
-
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        // 입력:
-        n = sc.nextInt();
-        k = sc.nextInt();
-        for(int i = 0; i < n; i++)
-            coins[i] = sc.nextInt();
-
-        // 큰 동전부터 이용합니다.
-        for(int i = n - 1; i >= 0; i--) {
-            ans += k / coins[i];
-            k %= coins[i];
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int N = Integer.parseInt(st.nextToken());
+        int K = Integer.parseInt(st.nextToken());
+        int count = 0;
+        Integer[] coins = new Integer[N];
+        for (int i = 0; i < N; i++) {
+            coins[i] = Integer.parseInt(br.readLine());
         }
-
-        System.out.print(ans);
+        Arrays.sort(coins, Collections.reverseOrder());
+        while (K > 0) {
+            for (int i = 0; i < N; i++) {
+                count += K / coins[i];
+                K %= coins[i];
+            }
+        }
+        bw.write(count + "\n");
+        bw.flush();
+        bw.close();
+        br.close();
     }
 }
