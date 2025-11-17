@@ -12,8 +12,8 @@ public class Main {
         int length = A.length();
         int cnt = 1;
         String B = "";
-        for (int i = 0; i < length - 1; i++) {            
-            if (i == length - 2) B += A.charAt(i) + String.valueOf(cnt + 1);
+        for (int i = 0; i < length; i++) {            
+            if (i == length - 1) B += A.charAt(i) + String.valueOf(cnt);
             else {
                 if (A.charAt(i + 1) == A.charAt(i)) cnt++;
                 else {
