@@ -17,7 +17,7 @@ public class Main {
         }
         Arrays.sort(ability);
         int diff = 0;
-        if (ability[2] > ability[3]) {
+        if (ability[2] >= ability[3]) {
             diff = Math.abs((ability[0] + ability[3] + ability[5]) - (ability[1] + ability[2] + ability[4]));
         } else {
             diff = Math.abs((ability[0] + ability[2] + ability[5]) - (ability[1] + ability[3] + ability[4]));
