@@ -14,7 +14,10 @@ public class Main {
         int M = T.length();
         int idx = -1;
         for (int i = 0; i < N - M + 1; i++) {
-            if (S.substring(i, i + M).equals(T)) idx = i;
+            if (S.substring(i, i + M).equals(T)) {
+                idx = i;
+                break;
+            } 
         }
         bw.write(String.valueOf(idx));
         bw.flush();
