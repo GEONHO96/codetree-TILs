@@ -16,7 +16,10 @@ public class Main {
         int x4 = Integer.parseInt(st.nextToken());
         int cnt = 0;
         for (int i = x1; i <= x2; i++) {
-            if (x3 <= i || i <= x4) cnt++;
+            if (x3 <= i) cnt++;
+        }
+        for (int i = x3; i <= x4; i++) {
+            if (x4 >= i) cnt++;
         }
         if (cnt > 0) bw.write("intersecting");
         else bw.write("nonintersecting");
