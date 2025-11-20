@@ -1,30 +1,30 @@
-import java.util.Scanner;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.StringTokenizer;
 
 public class Main {
-    public static int x1, x2, x3, x4;
-
-    public static boolean intersecting(int x1, int x2, int x3, int x4) {
-        // 겹치지 않는 경우에 대한 처리를 먼저 진행합니다.
-        if(x2 < x3 || x4 < x1)
-            return false;
-        // 나머지는 전부 겹치는 경우라고 볼 수 있습니다.
-        else
-            return true;
-    }
-
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        // 입력
-        x1 = sc.nextInt();
-        x2 = sc.nextInt();
-        x3 = sc.nextInt();
-        x4 = sc.nextInt();
-
-        // 겹치는지를 확인합니다.
-        if(intersecting(x1, x2, x3, x4))
-            System.out.print("intersecting");
-        else
-            System.out.print("nonintersecting");
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int x1 = Integer.parseInt(st.nextToken());
+        int x2 = Integer.parseInt(st.nextToken());
+        int x3 = Integer.parseInt(st.nextToken());
+        int x4 = Integer.parseInt(st.nextToken());
+        int cnt = 0;
+        for (int i = x1; i <= x2; i++) {
+            if (x1 <= x4 && x3 <= i) cnt++;
+        }
+        for (int i = x3; i <= x4; i++) {
+            if (x1 >= x4 && x1 <= i) cnt++;
+        }
+        if (cnt > 0) bw.write("intersecting");
+        else bw.write("nonintersecting");
+        bw.flush();
+        bw.close();
+        br.close();
     }
 }
