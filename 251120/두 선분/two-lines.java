@@ -19,7 +19,7 @@ public class Main {
             if (x3 <= i) cnt++;
         }
         for (int i = x3; i <= x4; i++) {
-            if (x1 >= i) cnt++;
+            if (x1 <= i) cnt++;
         }
         if (cnt > 0) bw.write("intersecting");
         else bw.write("nonintersecting");
